@@ -47,7 +47,7 @@
 	<!-- Content -->
 	<div class="content m-0">
 		<div id="content" class="container my-5">
-			<h2 class="mb-4 mt-0 text-center pt-0">CSE Department</h2>
+			<h2 class="mb-4 mt-0 text-center pt-0">Mandates</h2>
 			<div class="accordion-content" id="small">
 				<div class="accordion" id="accordionTabs">
 					<div class="card" data-bs-toggle="collapse" data-bs-target="#nav-department" aria-expanded="false">
@@ -742,78 +742,7 @@
 		});
 	</script>
 
-	<!--  -->
 
-	<script>
-		function show(id) {
-			const contentContainer = document.querySelector("#content");
-			const selectedTab = document.querySelector(id);
-
-			if (selectedTab) {
-				// Replace the content of #content with the selected tab's content
-				contentContainer.innerHTML = selectedTab.innerHTML;
-			}
-			document.querySelector(".sidebar").classList.remove("active");
-			removeActiveFromAnchors();
-			// Remove the overlay
-			document.querySelector(".overlay").classList.remove("active");
-		}
-
-		const dismissButton = document.querySelector(".dismiss");
-		const contentContainer = document.querySelector("#content");
-
-		dismissButton.addEventListener("click", function () {
-			// Hide the sidebar and reset active states
-			document.querySelector(".sidebar").classList.remove("active");
-			removeActiveFromAnchors();
-
-			// Restore the original content in the content container
-		});
-
-		const originalContentHTML = contentContainer.innerHTML;
-
-		function removeActiveFromAnchors() {
-			const anchors = document.querySelectorAll(
-				".list-unstyled.components li a"
-			);
-			anchors.forEach((anchor) => {
-				anchor.classList.remove("active");
-			});
-		}
-
-		function removeActiveFromLis() {
-			const anchors = document.querySelectorAll(
-				".list-unstyled.components li"
-			);
-			anchors.forEach((anchor) => {
-				anchor.classList.remove("active");
-			});
-		}
-
-		// Add click event listeners to navlinks
-		const navlinks = document.querySelectorAll(
-			".list-unstyled.components li a"
-		);
-		navlinks.forEach((link) => {
-			link.addEventListener("click", function (e) {
-				e.preventDefault();
-				removeActiveFromAnchors();
-				this.classList.add("active");
-				show(this.getAttribute("href"));
-			});
-		});
-		const navlink = document.querySelectorAll(
-			".list-unstyled.components li "
-		);
-		navlink.forEach((link) => {
-			link.addEventListener("click", function (e) {
-				e.preventDefault();
-				removeActiveFromLis();
-				this.classList.add("active");
-				show(this.getAttribute("href"));
-			});
-		});
-	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
